@@ -43,7 +43,7 @@ class App extends React.Component {
 
   tooBad(){
     var randomIndex = Math.floor(Math.random() * 558)
-    this.setState({showImage: !this.state.showImage, tooBad: !this.setState.tooBad, joke: this.state.jokes[randomIndex].joke})
+    this.setState({showImage: !this.state.showImage, tooBad: !this.state.tooBad, joke: this.state.jokes[randomIndex].joke})
   }
 
   // addImage(){
