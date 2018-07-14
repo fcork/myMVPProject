@@ -10,9 +10,11 @@ class App extends React.Component {
     this.state = { 
       jokes: [],
       joke:  '',
-      showImage: false
+      showImage: false,
+      tooBad: false
     }
     this.getJoke = this.getJoke.bind(this)
+    this.tooBad = this.tooBad.bind(this)
   }
 
   componentDidMount() {
@@ -36,7 +38,12 @@ class App extends React.Component {
   
   getJoke(){
     var randomIndex = Math.floor(Math.random() * 558)
-    this.setState({joke: this.state.jokes[randomIndex].joke, showImage: !this.state.showImage})
+    this.setState({joke: this.state.jokes[randomIndex].joke})
+  }
+
+  tooBad(){
+    var randomIndex = Math.floor(Math.random() * 558)
+    this.setState({showImage: !this.state.showImage, tooBad: !this.setState.tooBad, joke: this.state.jokes[randomIndex].joke})
   }
 
   // addImage(){
@@ -49,7 +56,7 @@ class App extends React.Component {
       <h1>Chuck Norris Random Joke Generator</h1>
       <List jokes={this.state}/>
       <button onClick={this.getJoke}>I'm Ready To Laugh</button>
-      <button>I'm Not Ready To Laugh</button>
+      <button onClick={this.tooBad}>I'm Not Ready To Laugh</button>
     </div>)
   }
 }
