@@ -2,10 +2,10 @@ var express = require('express');
 let app = express();
 var bodyParser = require('body-parser');
 let axios = require('axios')
-const config = require('../config.js')
+// const config = require('../config.js')
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
-var items = require('../database-mongo');
+// var items = require('../database-mongo');
 
 // UNCOMMENT FOR REACT
 app.use(express.static(__dirname + '/../react-client/dist'));
